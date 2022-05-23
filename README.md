@@ -1,4 +1,6 @@
 # flutter_app
 Flutterを用いたスループットデータ収集用のアプリケーションとなっております。
-![image](https://github.com/sanoyuuto/sano_flutter/blob/master/screen1.jpg)
+<img src="***https://github.com/sanoyuuto/sano_flutter/blob/master/screen1.jpg***" width="***320px***">
+
+
 ## Getting Started
