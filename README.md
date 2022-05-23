@@ -6,7 +6,8 @@
 #### ④データ保存ボタンを押す<br>
 #### ⑤保存が完了すると画像２のようにファイルが保存されていることを確認できます<br>
 ## 画像1
-<img src="https://github.com/sanoyuuto/sano_flutter/blob/master/screen1.jpg" width="50%" />
+<img src="https://github.com/sanoyuuto/sano_flutter/blob/master/screen1.jpg" width="50%" /><br>
+
 ## 画像2
 <img src="https://github.com/sanoyuuto/sano_flutter/blob/master/screen2.jpg" width="50%" />
 
