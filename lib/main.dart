@@ -3,12 +3,15 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:dio/dio.dart';
+import 'package:ext_storage/ext_storage.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 
-
-final imgUrl = ""; //ダウンロードするファイルのリンク
-final   T= 120;//何秒計測するか
+//final imgUrl = "https://imageslabo.com/wp-content/uploads/2019/07/1114_water_hamon_9514.jpg";
+//final imgUrl = "https://cdn.paperm.jp/image/freeillust/xmas_198.png";
+final imgUrl = "https://imageslabo.com/wp-content/uploads/2019/05/288_shinryoku_sky_6715.jpg";
+//final  REPETITIONTIME = 499;//何回ダウンロードするか
+final   T= 120;//何秒ダウンロードするか
 
 var dio = Dio();
 
@@ -44,7 +47,7 @@ class MyHomePage extends StatefulWidget {
 // Widgetから呼ばれるStateクラス
 class _MyHomePageState extends State<MyHomePage> { //_MyHomePageメソッド
   //変数定義
-  final double fileSize= (ファイルサイズ)*8;//(MByteをMbitに変換)
+  final double fileSize=4.92*8;//(MByteをMbitに変換)
   int _timeMsec = 0; //Requestにかかった時間を格納
   double _timeSec=0;
   double Mbps=0;
@@ -96,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> { //_MyHomePageメソッド
     _timeSec=_timeMsec/1000;//msをsに変換
     Mbps=fileSize/_timeSec;//throughputを求める(Mbps)
     Mbps=((Mbps*1000).floor())/1000;//(小数点3桁まで表示)
-    setState(() {  // 画面の更新のため、setStateでフィールドを変更する必要がある
+    setState(() {  // おそらく画面の更新のため、setStateでフィールドを変更する必要がある
       throughput=Mbps;
     }
     );
@@ -146,6 +149,19 @@ class _MyHomePageState extends State<MyHomePage> { //_MyHomePageメソッド
   );
 }
 
+//収集したデータをダウンロードディレクトリにファイルを生成しデータを書き込み保存する関数(emulator用)
+  /*void saveData(txtName) async{
+    String path = await ExtStorage.getExternalStoragePublicDirectory(ExtStorage.DIRECTORY_DOCUMENTS);
+    String fullPath = "$path/$txtName";
+    File file = File(fullPath);
+    var raf = file.openSync(mode: FileMode.write);
+    dataset.forEach((key, value) {
+      raf.writeStringSync("$key   $value\n");
+     }
+    );
+    await raf.close();
+  }*/
+
   Future<void>  makeTxt(myFile) async{
     //ログファイル作成
     final logDirectory = await getApplicationDocumentsDirectory();
@@ -161,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> { //_MyHomePageメソッド
   }
 
   void makeDataset() async{
-    for(int i = 1; i <2; i++) {
+    for(int i = 1; i <7; i++) {
       await repetition();
       await makeTxt("my_car_4G$i.txt");
       dataset={};
