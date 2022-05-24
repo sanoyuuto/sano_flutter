@@ -7,9 +7,7 @@ import 'package:ext_storage/ext_storage.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 
-//final imgUrl = "https://imageslabo.com/wp-content/uploads/2019/07/1114_water_hamon_9514.jpg";
-//final imgUrl = "https://cdn.paperm.jp/image/freeillust/xmas_198.png";
-final imgUrl = "https://imageslabo.com/wp-content/uploads/2019/05/288_shinryoku_sky_6715.jpg";
+final imgUrl = "";//アクセスするファイルのURL
 //final  REPETITIONTIME = 499;//何回ダウンロードするか
 final   T= 120;//何秒ダウンロードするか
 
