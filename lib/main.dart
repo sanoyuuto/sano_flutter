@@ -147,19 +147,6 @@ class _MyHomePageState extends State<MyHomePage> { //_MyHomePageメソッド
   );
 }
 
-//収集したデータをダウンロードディレクトリにファイルを生成しデータを書き込み保存する関数(emulator用)
-  /*void saveData(txtName) async{
-    String path = await ExtStorage.getExternalStoragePublicDirectory(ExtStorage.DIRECTORY_DOCUMENTS);
-    String fullPath = "$path/$txtName";
-    File file = File(fullPath);
-    var raf = file.openSync(mode: FileMode.write);
-    dataset.forEach((key, value) {
-      raf.writeStringSync("$key   $value\n");
-     }
-    );
-    await raf.close();
-  }*/
-
   Future<void>  makeTxt(myFile) async{
     //ログファイル作成
     final logDirectory = await getApplicationDocumentsDirectory();
