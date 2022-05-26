@@ -8,8 +8,5 @@
 ## 画像1
 <img src="https://github.com/sanoyuuto/sano_flutter/blob/master/screen1.jpg" width="50%" /><br>
 
-## 画像2
-<img src="https://github.com/sanoyuuto/sano_flutter/blob/master/screen2.jpg" width="50%" /><br>
-
 ## 画像3
 <img src="https://github.com/sanoyuuto/sano_flutter/blob/master/screen3.jpg" width="50%" />
